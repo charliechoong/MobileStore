@@ -6,7 +6,7 @@
     margin-bottom: 64px;
   }
   
-  .product-container {
-    display: flex;
-    justify-content: center;
-  }
+.product-container {
+  display: flex;
+  justify-content: center;
+}

@@ -5,13 +5,13 @@
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <h6>Price: ${{ product.price }}</h6>
-        <form>
-            <div class="form-group">
-                <select class="form-control select-input" >
-                    <option *ngFor="let i of choiceLimit">{{ i }}</option>
+        <form #form="ngForm" (ngSubmit)="submitForm()">
+            <div class="form-group" >
+                <select name="quantity" class="form-control select-input" [(ngModel)]="quantity" required default="1">
+                    <option *ngFor="let i of choices">{{ i }}</option>
                 </select>
             </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add to cart</button>
         </form>
-        <a class="btn btn-primary">Add to cart</a>
     </div>
 </div>
