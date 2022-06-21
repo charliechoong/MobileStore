@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { identifierName } from '@angular/compiler';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../product-list/product-list.component';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProductItemComponent implements OnInit {
     description: "",
   };
 
-  //@Output() onSubmit = 
+  @Output() addToCart = new EventEmitter() 
 
   choiceLimit: number = 10;
   choices: number[] = [...Array(this.choiceLimit).keys()].map(v => v+1);
@@ -27,7 +28,9 @@ export class ProductItemComponent implements OnInit {
   }
 
   submitForm(): void {
+    this.addToCart.emit([this.product, this.quantity])
     alert(`${this.quantity} ${this.product.name} has been added to cart.`)
+    this.quantity = 0;
   }
 
 }
