@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubmissionService } from '../../services/submission.service';
 
 @Component({
   selector: 'app-confirmation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor() { }
+  name: string = ""
+  totalPrice: number = 0
+
+  constructor(private submissionService: SubmissionService) { }
 
   ngOnInit(): void {
+    const submissionDetails = this.submissionService.getSubmission();
+    this.name = submissionDetails.name;
+    this.totalPrice = submissionDetails.totalPrice;
   }
 
 }

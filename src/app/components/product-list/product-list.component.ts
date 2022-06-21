@@ -17,7 +17,7 @@ export type Product = {
 export class ProductListComponent implements OnInit {
 
   products: Product[] = []
-  item: [Product, number] = [{id: -1, name: "", description: "", price: -1, url: ""}, 0]
+  item: [Product, number] = [{id: 0, name: "", description: "", price: -1, url: ""}, 0]
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {

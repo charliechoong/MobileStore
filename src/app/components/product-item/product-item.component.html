@@ -6,7 +6,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <h6>Price: ${{ product.price }}</h6>
-        <form #form="ngForm" (ngSubmit)="submitForm()">
+        <form #form="ngForm" class="form-margin" (ngSubmit)="submitForm()">
             <div class="form-group" >
                 <select name="quantity" class="form-control select-input" [(ngModel)]="quantity" required default="1">
                     <option *ngFor="let i of choices">{{ i }}</option>
