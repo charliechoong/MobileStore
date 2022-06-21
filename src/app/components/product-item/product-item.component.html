@@ -1,1 +1,17 @@
-<p>product-item works!</p>
+
+<div class="card product-container">
+    <img class="card-img-top product-image" src="{{product.url}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <h6>Price: ${{ product.price }}</h6>
+        <form>
+            <div class="form-group">
+                <select class="form-control select-input" >
+                    <option *ngFor="let i of choiceLimit">{{ i }}</option>
+                </select>
+            </div>
+        </form>
+        <a class="btn btn-primary">Add to cart</a>
+    </div>
+</div>
