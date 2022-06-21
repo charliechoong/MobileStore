@@ -1,1 +1,23 @@
-<p>product-item-details works!</p>
+<div class="detail-container" >
+    <img src="{{product.url}}" alt="Card image cap">
+    <div class="detail-item">
+        <h2>{{product.name}}</h2>
+        <span>{{product.description}}</span>
+        <h6>Price: ${{product.price}}</h6>
+        <br>
+        <form #form="ngForm" (ngSubmit)="submitForm()">
+            <div class="form-group" >
+                <select name="quantity" class="form-control select-input" [(ngModel)]="quantity" required default="1">
+                    <option *ngFor="let i of choices">{{ i }}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add to cart</button>
+        </form>
+        <div class="back-link">
+            <a class="back-link" href="">Back to Product List</a>
+        </div>
+    </div>
+</div>
+<div>
+
+</div>
