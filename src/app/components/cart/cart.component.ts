@@ -30,8 +30,21 @@ export class CartComponent implements OnInit {
     this.totalPrice =  prices.reduce((x, y) => x + y)
   }
 
+  onProductQtyChange(event: Event, id: number) {
+    console.log(event)
+    this.cartItems = this.cartItems.map(item => {
+      if (item['product'].id === id) {
+        return { product: item['product'], quantity: Number(event.target)}
+      } else {
+        return item;
+      }
+    })
+    this.updateTotalPrice();
+  }
+
   submitForm(): void {
     console.log(this.name, this.totalPrice)
     this.submissionService.addSubmission({ name: this.name, totalPrice: this.totalPrice})
   }
+
 }

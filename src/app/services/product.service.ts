@@ -25,14 +25,16 @@ export class ProductService {
     return this.getAllItems().pipe(map(items => items.find(item => item.id === id)))
   }
 
-  addItemToCart(product: Product, quantity: number) {
-    this.cart.find(ci => ci.product === product, (res: CartItem|undefined) => {
-      if (res) {
-        res.quantity = quantity
-      } else {
-        this.cart.push({ product, quantity })
-      }
-    })
+  addItemToCart(product: Product, quantity: number): void {
+    const res = this.cart.find(ci => ci['product'].id === product.id)
+    if (res) {
+      res.quantity += quantity
+    } else {
+      this.cart.push({ product, quantity })
+    }
   }
 
+  getAllCartItems(): CartItem[] {
+    return this.cart;
+  }
 }
