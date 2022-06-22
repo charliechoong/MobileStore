@@ -1,8 +1,7 @@
 import { identifierName } from '@angular/compiler';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import { Product } from '../product-list/product-list.component';
-
+import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',

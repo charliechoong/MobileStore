@@ -1,12 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Product } from '../components/product-list/product-list.component';
-
-export type CartItem = {
-  product: Product,
-  quantity: number,
-}
+import { Product } from '../models/product';
+import { CartItem } from '../models/cartItem';
 
 @Injectable({
   providedIn: 'root'

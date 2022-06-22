@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export type Submission = {
-  name: string;
-  totalPrice: number;
-}
+import { Submission } from 'src/app/models/submission'
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CartItem, ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product.service';
 import { FormsModule } from '@angular/forms';
-import { Submission, SubmissionService } from 'src/app/services/submission.service';
+import { SubmissionService } from 'src/app/services/submission.service';
+import { Submission } from 'src/app/models/submission';
+import { CartItem } from 'src/app/models/cartItem';
 
 @Component({
   selector: 'app-cart',
