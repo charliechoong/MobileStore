@@ -30,11 +30,8 @@ export class CartComponent implements OnInit {
     }
   }
 
-  updateTotalPrice(item: CartItem): void {
-    if (item.quantity === 0) {
-      this.productService.removeCartItem(item.product);
-    }
-    this.cartItems.filter((item) => item.quantity > 0)
+  updateTotalPrice(): void {
+    this.cartItems.filter((item) => item.quantity !== -1)
     const prices = this.cartItems.map((item) => item.product.price * item.quantity)
     this.totalPrice = prices.reduce((x, y) => x + y)
     this.productService.updateCart(this.cartItems)
@@ -42,6 +39,8 @@ export class CartComponent implements OnInit {
 
   submitForm(): void {
     this.submissionService.addSubmission({ name: this.name, totalPrice: this.totalPrice})
+    // Empty cart
+    this.productService.resetCart();
   }
 
 }

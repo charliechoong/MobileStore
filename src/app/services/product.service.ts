@@ -41,4 +41,8 @@ export class ProductService {
   updateCart(cartItems: CartItem[]): void {
     this.cart = cartItems;
   }
+
+  resetCart(): void {
+    this.cart = []
+  }
 }
