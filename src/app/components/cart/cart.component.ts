@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SubmissionService } from 'src/app/services/submission.service';
 import { Submission } from 'src/app/models/submission';
 import { CartItem } from 'src/app/models/cartItem';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-cart',
@@ -31,10 +32,15 @@ export class CartComponent implements OnInit {
   }
 
   updateTotalPrice(): void {
-    this.cartItems.filter((item) => item.quantity !== -1)
     const prices = this.cartItems.map((item) => item.product.price * item.quantity)
     this.totalPrice = prices.reduce((x, y) => x + y)
     this.productService.updateCart(this.cartItems)
+  }
+  
+  removeItem(product: Product): void {
+    this.cartItems = this.cartItems.filter((item) => item.product.id !== Number(product.id))
+    this.productService.updateCart(this.cartItems)
+    this.updateTotalPrice()
   }
 
   submitForm(): void {

@@ -11,6 +11,7 @@
                     <input name="{{item.product.id}}" type="number" class="number-input" value="{{item['quantity']}}" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice()" min="0">
                 </span>
             </div>
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeItem(item['product'])"></button>
         </div>
         <h4>
             Total: ${{totalPrice}}
