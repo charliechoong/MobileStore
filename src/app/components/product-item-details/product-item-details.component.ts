@@ -18,8 +18,7 @@ export class ProductItemDetailsComponent implements OnInit {
   }
   productId = 0;
   quantity = 0;
-  choiceLimit = 10;
-  choices = [...Array(this.choiceLimit).keys()].map(v => v+1)
+
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

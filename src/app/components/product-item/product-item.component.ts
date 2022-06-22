@@ -18,8 +18,6 @@ export class ProductItemComponent implements OnInit {
 
   @Output() addToCart = new EventEmitter() 
 
-  choiceLimit: number = 10;
-  choices: number[] = [...Array(this.choiceLimit).keys()].map(v => v+1);
   quantity: number = 0;
 
   constructor(private productService: ProductService) { }

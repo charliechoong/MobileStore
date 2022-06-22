@@ -7,9 +7,7 @@
         <br>
         <form #form="ngForm" (ngSubmit)="submitForm()">
             <div class="form-group" >
-                <select name="quantity" class="form-control select-input" [(ngModel)]="quantity" required default="1">
-                    <option *ngFor="let i of choices">{{ i }}</option>
-                </select>
+                <input name="quantity" type="number" class="form-control select-input" [(ngModel)]="quantity" min="1" required>
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add to cart</button>
         </form>
