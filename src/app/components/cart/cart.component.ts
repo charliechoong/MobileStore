@@ -24,24 +24,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.productService.getAllCartItems()
-    this.updateTotalPrice()
+    if (this.cartItems.length>0) {
+      this.updateTotalPrice()
+    }
   }
 
   updateTotalPrice(): void {
     const prices = this.cartItems.map((item) => item.product.price * item.quantity)
     this.totalPrice =  prices.reduce((x, y) => x + y)
-  }
-
-  onProductQtyChange(event: Event, id: number) {
-    console.log(event)
-    this.cartItems = this.cartItems.map(item => {
-      if (item['product'].id === id) {
-        return { product: item['product'], quantity: Number(event.target)}
-      } else {
-        return item;
-      }
-    })
-    this.updateTotalPrice();
   }
 
   submitForm(): void {
