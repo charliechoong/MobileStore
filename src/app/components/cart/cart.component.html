@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="">Credit card number</label>
-                <input class="form-control" placeholder="(16 digit number)" name="creditNumber" [(ngModel)]="creditNumber" required>
+                <input class="form-control" placeholder="(16 digit number)" pattern="[0-9]{16,16}" name="creditNumber" [(ngModel)]="creditNumber" required>
             </div>
             <small class="form-text">We'll never share your payment details with anyone else.</small>
             <button (click)="submitForm()" routerLink="/confirmation" type="submit" class="form-control btn btn-primary" [disabled]="form.invalid">
