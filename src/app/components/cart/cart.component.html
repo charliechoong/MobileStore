@@ -8,7 +8,7 @@
                 <h4>{{item['product'].name}}</h4>
                 <span>Price: {{item['product'].price | currency }}</span>
                 <span>Amount: 
-                    <input name="{{item.product.id}}" type="number" class="number-input" value="{{item['quantity']}}" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice()" min="0">
+                    <input name="{{item.product.id}}" type="number" class="number-input" value="{{item['quantity']}}" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice()" min="1">
                 </span>
             </div>
             <button type="button" class="btn-close" aria-label="Close" (click)="removeItem(item['product'])"></button>

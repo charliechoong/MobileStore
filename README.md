@@ -3,7 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
 ## Description
-MobileStore is an e-commerce store where buyers can view and purchase amazing products. 
+MobileStore is an e-commerce store where buyers can view and purchase amazing products. Online customers can add or remove items from cart.
+Upon clicking onto an individual item, users can view a more detailed description. 
+
+Customers can add credit card payment and submit their purchase once they have finalized their cart items and prices. 
 
 ## Running the App
 1. ```npm install```
