@@ -28,6 +28,9 @@ export class ProductItemComponent implements OnInit {
   }
 
   submitForm(): void {
+    if (this.quantity === 0) {
+      return
+    }
     this.productService.addItemToCart(this.product, Number(this.quantity))
     alert(`${this.quantity} ${this.product.name} has been added to cart.`)
     this.quantity = 0;

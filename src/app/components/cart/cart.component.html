@@ -8,7 +8,7 @@
                 <h4>{{item['product'].name}}</h4>
                 <span>Price: ${{item['product'].price}}</span>
                 <span>Amount: 
-                    <input class="number-input" value="{{item['quantity']}}" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice()">
+                    <input name="{{item.product.id}}" class="number-input" value="{{item['quantity']}}" [(ngModel)]="item.quantity" (ngModelChange)="updateTotalPrice(item)" min="0">
                 </span>
             </div>
         </div>

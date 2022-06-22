@@ -33,4 +33,12 @@ export class ProductService {
   getAllCartItems(): CartItem[] {
     return this.cart;
   }
+
+  removeCartItem(product: Product): void {
+    this.cart = this.cart.filter((item) => item.product.id !== product.id)
+  }
+
+  updateCart(cartItems: CartItem[]): void {
+    this.cart = cartItems;
+  }
 }
