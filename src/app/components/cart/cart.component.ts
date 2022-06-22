@@ -41,6 +41,7 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartItems.filter((item) => item.product.id !== Number(product.id))
     this.productService.updateCart(this.cartItems)
     this.updateTotalPrice()
+    alert(`${product.name} had been removed from cart.`)
   }
 
   submitForm(): void {
